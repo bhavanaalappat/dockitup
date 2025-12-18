@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bhavana's Docker Site</title>
+</head>
+<body>
+  <h1>Bhavana Alappat</h1>
+  <p>Docker networking demo</p>
+
+  <button onclick="callApi()">Call API</button>
+  <p id="result"></p>
+
+  <script>
+    function callApi() {
+      fetch('/api')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('result').innerText = data;
+        })
+        .catch(err => {
+          document.getElementById('result').innerText = 'Error calling API';
+        });
+    }
+  </script>
+</body>
+</html>
